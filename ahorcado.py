@@ -1,14 +1,14 @@
+import random
+
 def lectura():
-    lista_palabras=[]
-    archivo=open("./data.txt","r",encoding="utf-8") #arreglar despues
+    archivo=open("./data.txt","r",encoding="utf-8") 
     archivo= archivo.read()
     lista_palabras=archivo.split()
-
-    print(lista_palabras)
+    return lista_palabras
 
 def elegir_palabra():
-    pass
-
+    return random.choice(lectura())
+    
 def interfaz():
     pass
 
@@ -16,6 +16,10 @@ def comprobar_respuesta():
     pass
 
 def run():
+    lista_palabras=[]
     lectura()
+
+    print(elegir_palabra()) #problema de lista vacia
+
 if __name__=='__main__':
     run()
