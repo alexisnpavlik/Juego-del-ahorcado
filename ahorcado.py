@@ -1,4 +1,5 @@
 import random
+import os
 
 def lectura():
     archivo=open("./data.txt","r",encoding="utf-8") 
@@ -9,17 +10,24 @@ def lectura():
 def elegir_palabra():
     return random.choice(lectura())
     
-def interfaz():
-    pass
+def interfaz(palabra_correcta,respuesta):
+    os.system ("cls")
+    print("Adivina la palabra en el juego del ahorcado")
+    for i in range(len(palabra_correcta)):
+        respuesta.append("_")
+        print(respuesta[i])
+
 
 def comprobar_respuesta():
     pass
 
 def run():
     lista_palabras=[]
+    respuesta=[]
     lectura()
+    palabra_correcta=elegir_palabra()
+    interfaz(palabra_correcta,respuesta)
 
-    print(elegir_palabra()) #problema de lista vacia
 
 if __name__=='__main__':
     run()
