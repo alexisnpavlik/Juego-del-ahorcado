@@ -15,7 +15,7 @@ def interfaz(palabra_correcta,respuesta):
     print("Adivina la palabra en el juego del ahorcado")
     for i in range(len(palabra_correcta)):
         respuesta.append("_")
-        print(respuesta[i])
+        print(respuesta[i]," ",end="")
 
 
 def comprobar_respuesta():
