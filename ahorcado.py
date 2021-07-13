@@ -14,18 +14,18 @@ def elegir_palabra():
 def interfaz(palabra_correcta,respuesta):
     respuesta=""
     os.system ("cls")
-    print("Adivina una letra en el juego del ahorcado")
+    print("Adivina la palabra en el juego del ahorcado")
 
     for i in range(len(palabra_correcta)):
         respuesta=respuesta+"_"
-    print(respuesta)
     print(palabra_correcta)
 
 
     while respuesta!=palabra_correcta:
-        print(respuesta)
+        for i in respuesta:
+            print(f"{i} ",end="")
 
-        letra= input("Ingresa una letra: ")
+        letra= input("\n\nIngresa una letra: ")
 
 
         for x in enumerate(palabra_correcta):
@@ -37,17 +37,14 @@ def interfaz(palabra_correcta,respuesta):
                 print(type(x[1]))
                 e=x[0]
                 f="ss"
-                respuesta.replace(respuesta[e],f)
+                respuesta.replace("_",f) #grabe problema
                 break
-            
-
-
+    
             
             else:
                 os.system ("cls")
                 print("¡¡¡Mala Suerte!!!!")
-                print(respuesta)
-
+               
         
 
 
