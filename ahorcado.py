@@ -1,6 +1,5 @@
 import random
 import os
-import re
 
 def lectura():
     archivo=open("c:/Users/elbus/Documents/Python/Ahorcado/data.txt","r",encoding="utf-8") 
@@ -18,7 +17,7 @@ def interfaz(palabra_correcta,respuesta):
 
     for i in range(len(palabra_correcta)):
         respuesta=respuesta+"_"
-    print(palabra_correcta)
+        respuesta_2=[]
 
 
     while respuesta!=palabra_correcta:
@@ -26,31 +25,23 @@ def interfaz(palabra_correcta,respuesta):
             print(f"{i} ",end="")
 
         letra= input("\n\nIngresa una letra: ")
-
+        letra=letra.lower()
+        os.system ("cls")
 
         for x in enumerate(palabra_correcta):
             if letra==x[1]:
+            
                 os.system ("cls")
                 print("¡¡¡Corecto!!!!")
-
-                print(type(x[0]))
-                print(type(x[1]))
-                e=x[0]
-                f="ss"
-                respuesta.replace("_",f) #grabe problema
-                break
-    
-            
-            else:
-                os.system ("cls")
-                print("¡¡¡Mala Suerte!!!!")
-               
+                
+                respuesta_2=list(respuesta)
+                respuesta_2[x[0]]=letra
+                respuesta=""
+                respuesta= "".join(respuesta_2)
+                
         
-
-
-
-def comprobar_respuesta():
-    pass
+    print(f"LOGRASTE ADIVINAR LA PALABRA, FELICIDADES!!! \n La palabra era: {palabra_correcta}")
+        
 
 def run():
     lista_palabras=[]
